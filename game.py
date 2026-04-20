@@ -12,16 +12,4 @@ while attempts < max_attempts:
         guess = int(input(f"({attempts+1}/{max_attempts}) 숫자 입력: "))
         if guess < 1 or guess > 100:
             print("1~100 사이로 입력하세요!")
-            continue
-        attempts += 1
-        if guess < answer:
-            print("더 큰 수!")
-        elif guess > answer:
-            print("더 작은 수!")
-        else:
-            print(f"🎉 정답! {attempts}번 만에 맞췄어요!")
-            break
-    except ValueError:
-        print("숫자만 입력하세요!")
-else:
-    print(f"😢 실패! 정답은 {answer}였어요.")
+            
