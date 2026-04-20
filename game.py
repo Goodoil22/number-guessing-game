@@ -1,11 +1,26 @@
 import random
 
 print("🎯 숫자 맞추기 게임!")
-print("1~100 사이 숫자, 최대 10회 도전!")
+difficulty = input("난이도 선택 (e:쉬움/10회, m:보통/7회, h:어려움/5회): ").lower()
 
-answer = random.randint(1, 100)
+if difficulty == "e":
+    max_attempts = 10
+    range_max = 100
+elif difficulty == "m":
+    max_attempts = 7
+    range_max = 75
+elif difficulty == "h":
+    max_attempts = 5
+    range_max = 50
+else:
+    print("기본(보통)으로 시작!")
+    max_attempts = 7
+    range_max = 75
+
+print(f"1~{range_max} 숫자, 최대 {max_attempts}회 도전!")
+
+answer = random.randint(1, range_max)
 attempts = 0
-max_attempts = 10
 
 while attempts < max_attempts:
     try:
